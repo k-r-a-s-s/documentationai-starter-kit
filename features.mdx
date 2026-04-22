@@ -1,0 +1,154 @@
+---
+title: Core Features of High Impact Athletes
+description: Explore the essential tools and capabilities that enable effective event participation and impact-driven fundraising.
+---
+
+## Overview
+
+High Impact Athletes empowers you to compete with purpose. You discover events, select causes, track fundraising, compete on leaderboards, and measure your real-world impact. These core features streamline your journey from registration to reporting.
+
+<Callout kind="info">
+  All features integrate seamlessly across web and mobile platforms for a consistent experience.
+</Callout>
+
+## Feature Overview
+
+Discover the essential capabilities at a glance.
+
+<Columns cols={2}>
+  <Card title="Event Discovery" icon="map-pin" href="#event-discovery">
+    Find and register for upcoming races and challenges tailored to your location and skill level.
+  </Card>
+  <Card title="Cause Matching" icon="heart" href="#cause-matching">
+    Choose from vetted charities and see how your participation drives maximum impact.
+  </Card>
+  <Card title="Fundraising Dashboard" icon="bar-chart" href="#fundraising-dashboard">
+    Track donations, set goals, and share progress with your community in real time.
+  </Card>
+  <Card title="Leaderboards" icon="trophy" href="#leaderboards">
+    Compete with friends and global athletes on dynamic rankings and challenges.
+  </Card>
+  <Card title="Impact Reporting" icon="activity" href="#impact-reporting">
+    View detailed metrics on funds raised, causes supported, and lives changed.
+  </Card>
+</Columns>
+
+## Event Discovery and Registration
+
+Browse and join events effortlessly.
+
+### How It Works
+
+<Steps>
+  <Step title="Search Events" icon="search">
+    Use filters for location, date, and event type to find races like HYROX challenges.
+
+    ```javascript
+    const events = await fetch('https://api.example.com/events?location=Paris&date=2026-04-23');
+    const data = await events.json();
+    ```
+  </Step>
+  <Step title="Register" icon="ticket">
+    Select your ticket, add cause support, and complete payment securely.
+  </Step>
+  <Step title="Confirm" icon="check-circle">
+    Receive instant confirmation and add to your calendar.
+  </Step>
+</Steps>
+
+<a id="event-discovery"></a>
+
+## Cause Selection and Matching
+
+Align your efforts with causes that matter.
+
+<Tabs>
+  <Tab title="Manual Selection" icon="list">
+    Browse categories like health, education, and environment. Pick one that resonates.
+
+    <ParamField path="causeId" param-type="string" required="true">
+      Unique cause identifier, e.g., `health-001`.
+    </ParamField>
+  </Tab>
+  <Tab title="AI Matching" icon="zap">
+    Answer a quick quiz for personalized recommendations based on your past activity.
+  </Tab>
+</Tabs>
+
+<a id="cause-matching"></a>
+
+## Fundraising Dashboard and Tracking
+
+Monitor your progress from anywhere.
+
+Integrate the dashboard SDK for custom apps:
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  import { HighImpactSDK } from '@highimpact/athletes-sdk';
+
+  const sdk = new HighImpactSDK({ apiKey: 'YOUR_API_KEY' });
+  const dashboard = await sdk.dashboard.fetch('user-123');
+  console.log(dashboard.totalRaised); // e.g., 1500
+  ```
+  ```python
+  from highimpact import HighImpactSDK
+
+  sdk = HighImpactSDK(api_key="YOUR_API_KEY")
+  dashboard = sdk.dashboard.fetch("user-123")
+  print(dashboard.total_raised)  # e.g., 1500
+  ```
+</CodeGroup>
+
+Set goals and automate updates.
+
+<a id="fundraising-dashboard"></a>
+
+## Community Leaderboards and Challenges
+
+Fuel friendly competition.
+
+<Expandable title="How Leaderboards Work" default-open="true">
+  Rankings update live based on funds raised per kilometer run. Create custom challenges for teams.
+
+  ```mermaid
+  graph TD
+      A[Participant] --> B[Run Event]
+      B --> C[Track Funds]
+      C --> D[Update Rank]
+      D --> E[Leaderboard]
+  ```
+</Expandable>
+
+<a id="leaderboards"></a>
+
+## Impact Metrics and Reporting
+
+See your contributions quantified.
+
+Generate custom reports:
+
+<ResponseField name="totalRaised" field-type="number" required="true">
+  Cumulative funds donated through your efforts.
+</ResponseField>
+
+<ResponseField name="causesSupported" field-type="array" required="false">
+  List of causes and allocation breakdown.
+</ResponseField>
+
+<Callout kind="tip">
+  Export reports as PDF or CSV for sharing with sponsors.
+</Callout>
+
+<a id="impact-reporting"></a>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Get Started" icon="rocket" href="/quickstart">
+    Register for your first event and select a cause.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Integrate features into your app or website.
+  </Card>
+</Columns>

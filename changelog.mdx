@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: Stay updated with the latest releases, feature enhancements, and improvements to the High Impact Athletes platform.
+---
+
+## Recent Releases
+
+<Callout kind="info">
+  Check this changelog for the latest updates to High Impact Athletes. We release new versions regularly to add features, fix bugs, and improve performance.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added leaderboard sharing with direct links to athlete profiles.
+- Introduced cause-specific fundraising goals for races.
+
+## Improvements
+
+- Enhanced race registration flow with real-time ticket availability.
+- Optimized dashboard loading times by `>30%`.
+
+## Bug Fixes
+
+- Fixed synchronization issues between race events and charity donations.
+- Resolved mobile leaderboard display glitches.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- New athlete profile customization with impact stats.
+- Integrated webhook support for external charity platforms.
+
+## Bug Fixes
+
+- Corrected donation tracking errors during high-traffic race days.
+- Patched authentication token refresh failures.
+
+## Deprecations
+
+- Legacy API v0 endpoints will be removed in v1.3.0. Migrate to v1 endpoints.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Core platform launch with race ticket integration.
+- Leaderboard and cause selection dashboards.
+
+## Breaking Changes
+
+- Updated authentication to use JWT tokens instead of sessions.
+
+## Initial Setup
+
+- First stable release for production use.
+
+</Update>
+
+## Upgrade Instructions
+
+Follow these steps to upgrade your High Impact Athletes integration to the latest version.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+
+    Export your athlete data and race configurations.
+
+````bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  https://api.example.com/v1/export > backup.json
+````
+
+  </Step>
+  <Step title="Update SDK" icon="download">
+
+    Install the latest SDK version.
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+````bash
+npm install high-impact-athletes-sdk@1.2.0
+````
+      </Tab>
+      <Tab title="Python" icon="code">
+````bash
+pip install high-impact-athletes-sdk==1.2.0
+````
+      </Tab>
+    </Tabs>
+
+  </Step>
+  <Step title="Run Migrations" icon="settings">
+
+    Apply database migrations.
+
+````bash
+npx high-impact-athletes migrate
+````
+
+  </Step>
+  <Step title="Test Integration" icon="check-circle">
+
+    Verify endpoints like leaderboards and donations.
+
+  </Step>
+</Steps>
+
+## Planned Enhancements
+
+<Expandable title="Upcoming Features" default-open="true">
+
+- Real-time race notifications via WebSockets.
+- Advanced analytics for athlete impact metrics.
+- Multi-language support for global races.
+
+</Expandable>
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+    Get started with basic integration.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Full endpoint documentation.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Have feedback on these releases? Share it via our support channels.
+</Callout>
